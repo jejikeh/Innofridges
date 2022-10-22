@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{52AAACA9-13CE-40CA-84F9-7153109BECBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1D8B66DE-F069-4E00-AFB4-AF68FC7EE46D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1A21BE4E-87A0-432D-83B6-2459D9FAAF10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{DD5A7AD7-4F57-4C27-90C0-91AE97698999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoGotchi.Domain", "Core\InnoGotchi.Domain\InnoGotchi.Domain.csproj", "{5632C87C-0DFC-4412-A246-6F17EAD55FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoGotchi.Application", "Core\InnoGotchi.Application\InnoGotchi.Application.csproj", "{8F1946E2-A465-408D-8950-3691D1440D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoGotchi.Persistence", "Infrastructure\InnoGotchi.Persistence\InnoGotchi.Persistence.csproj", "{522D9080-F684-422C-B524-8363A54CB454}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoGotchi.WebApi", "Presentation\InnoGotchi.WebApi\InnoGotchi.WebApi.csproj", "{24C0BF69-766F-4B61-98E1-B43C40527630}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5632C87C-0DFC-4412-A246-6F17EAD55FDA} = {52AAACA9-13CE-40CA-84F9-7153109BECBB}
+		{8F1946E2-A465-408D-8950-3691D1440D8B} = {52AAACA9-13CE-40CA-84F9-7153109BECBB}
+		{522D9080-F684-422C-B524-8363A54CB454} = {1D8B66DE-F069-4E00-AFB4-AF68FC7EE46D}
+		{24C0BF69-766F-4B61-98E1-B43C40527630} = {DD5A7AD7-4F57-4C27-90C0-91AE97698999}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5632C87C-0DFC-4412-A246-6F17EAD55FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5632C87C-0DFC-4412-A246-6F17EAD55FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5632C87C-0DFC-4412-A246-6F17EAD55FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5632C87C-0DFC-4412-A246-6F17EAD55FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F1946E2-A465-408D-8950-3691D1440D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F1946E2-A465-408D-8950-3691D1440D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F1946E2-A465-408D-8950-3691D1440D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F1946E2-A465-408D-8950-3691D1440D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522D9080-F684-422C-B524-8363A54CB454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522D9080-F684-422C-B524-8363A54CB454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522D9080-F684-422C-B524-8363A54CB454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522D9080-F684-422C-B524-8363A54CB454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C0BF69-766F-4B61-98E1-B43C40527630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C0BF69-766F-4B61-98E1-B43C40527630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C0BF69-766F-4B61-98E1-B43C40527630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C0BF69-766F-4B61-98E1-B43C40527630}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

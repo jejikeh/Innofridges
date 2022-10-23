@@ -1,4 +1,4 @@
-﻿namespace InnoGotchi.Domain.Pet;
+﻿namespace InnoGotchi.Domain;
 
 public class Pet
 {
@@ -21,14 +21,48 @@ public class Pet
     /// <summary>
     /// Pet age
     /// </summary>
-    public string Age => CalculateAge(); 
-    public PetStatus.Hunger Hunger { get; }
-    public PetStatus.Thirsty Thirsty { get; }
+    public string Age => CalculateAge();
+    
+    /// <summary>
+    /// Pet hunger level
+    /// </summary>
+    public PetLevel.Hunger Hunger { get; }
+    
+    /// <summary>
+    /// Pet thirsty level
+    /// </summary>
+    public PetLevel.Thirsty Thirsty { get; }
+    
+    /// <summary>
+    /// Days when pet was 
+    /// </summary>
     public int HappienessDayCount { get; }
     
     private string CalculateAge()
     {
         var daysFromBorn = DateTime.Now.Subtract(BornDate);
         return daysFromBorn > TimeSpan.FromDays(7) ? (daysFromBorn.Days / 7).ToString() : "NEWBORN";
+    }
+}
+
+/// <summary>
+/// Stages of hunger and thirsty
+/// </summary>
+public static class PetLevel
+{
+    public enum Hunger
+    {
+        Full,
+        Normal,
+        Hunger,
+        Dead
+    }
+
+    public enum Thirsty
+    {
+        Full,
+        Normal,
+        Thirsty,
+        Dead
     }
 }

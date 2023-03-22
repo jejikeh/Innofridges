@@ -1,16 +1,14 @@
 ﻿using Innogotchi.Domain;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using saja;
 
 namespace Innogotchi.Persistence.Configurations;
 
-public class InnoUserConfiguration : IEntityTypeConfiguration<InnoUser>
+public class InnoUserConfiguration : ModelUserBaseConfiguration<InnoUser>
 {
-    public void Configure(EntityTypeBuilder<InnoUser> builder)
+    public override void Configure(EntityTypeBuilder<InnoUser> builder)
     {
-        builder.HasKey(user => user.InnoUserId);
-        builder.HasIndex(user => user.InnoUserId).IsUnique();
-        builder.HasIndex(user => user.Username).IsUnique();
-        builder.Property(user => user.PasswordHash).IsRequired();
+        base.Configure(builder);
+        builder.HasIndex(user => user.Email).IsUnique();
     }
 }

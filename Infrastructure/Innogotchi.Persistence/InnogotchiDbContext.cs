@@ -1,13 +1,14 @@
 ﻿using Innogotchi.Domain;
 using Innogotchi.Persistence.Configurations;
 using Microsoft.EntityFrameworkCore;
+using saja.Interfaces;
 
 namespace Innogotchi.Persistence;
 
-public class InnogotchiDbContext : DbContext
+public class InnogotchiDbContext : DbContext, IUserModelDbContext<InnoUser>
 {
-    public DbSet<InnoUser> InnoUsers { get; set; }
-    
+    public DbSet<InnoUser> Users { get; set; }
+
     public InnogotchiDbContext(DbContextOptions options) : base(options)
     {
         

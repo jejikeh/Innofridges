@@ -1,8 +1,11 @@
 ﻿using Innogotchi.Application.Interfaces;
+using Innogotchi.Domain;
 using Innogotchi.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using saja.Extensions;
+using saja.Interfaces;
 
 namespace Innogotchi.Persistence;
 

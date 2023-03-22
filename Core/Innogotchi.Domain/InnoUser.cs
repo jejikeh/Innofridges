@@ -1,8 +1,10 @@
-﻿namespace Innogotchi.Domain;
+﻿using saja.Interfaces;
 
-public class InnoUser
+namespace Innogotchi.Domain;
+
+public class InnoUser : IUserModel
 {
-    public Guid InnoUserId { get; set; }
+    public Guid UserId { get; set; }
     public string Username { get; set; } = "Default";
     public string Email { get; set; } = "default@noname.com";
     public string PasswordHash { get; set; } = "";

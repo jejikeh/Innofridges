@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\saja\saja\saja.csproj" />
+    </ItemGroup>
+
 </Project>

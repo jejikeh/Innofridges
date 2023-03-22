@@ -1,6 +1,9 @@
-﻿namespace Innogotchi.Application.Interfaces;
+﻿using Innogotchi.Domain;
+using saja.Interfaces;
 
-public interface IInnoUserRepository
+namespace Innogotchi.Application.Interfaces;
+
+public interface IInnoUserRepository : IUserModelRepository<InnoUser>
 {
     
 }

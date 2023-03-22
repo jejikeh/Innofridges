@@ -1,8 +1,8 @@
 ﻿using MediatR;
+using saja.Commands.DeleteUserModel;
 
 namespace Innogotchi.Application.Commands.InnoUserCommands.DeleteInnoUser;
 
-public class DeleteInnoUserCommand : IRequest
+public class DeleteInnoUserCommand : DeleteUserModelCommand
 {
-    public Guid InnoUserId { get; set; }
 }

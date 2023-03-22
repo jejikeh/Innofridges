@@ -1,24 +1,13 @@
-﻿using Innogotchi.Application.Common.Exceptions;
-using Innogotchi.Application.Interfaces;
+﻿using Innogotchi.Application.Interfaces;
 using Innogotchi.Domain;
-using MediatR;
+using saja.Commands.DeleteUserModel;
+using saja.Interfaces;
 
 namespace Innogotchi.Application.Commands.InnoUserCommands.DeleteInnoUser;
 
-public class DeleteInnoUserCommandHandler : IRequestHandler<DeleteInnoUserCommand>
+public class DeleteInnoUserCommandHandler : DeleteUserModelCommandHandler<InnoUser, IInnoUserRepository>
 {
-    private readonly IInnoUserRepository _innoUserRepository;
-
-    public DeleteInnoUserCommandHandler(IInnoUserRepository innoUserRepository)
+    public DeleteInnoUserCommandHandler(IInnoUserRepository userModelRepository) : base(userModelRepository)
     {
-        _innoUserRepository = innoUserRepository;
-    }
-
-    public async Task Handle(DeleteInnoUserCommand request, CancellationToken cancellationToken)
-    {
-        if (await _innoUserRepository.GetInnoUserById(request.InnoUserId, cancellationToken) is null)
-            throw new NotFoundException<InnoUser>(request.InnoUserId);
-
-        await _innoUserRepository.DeleteInnoUser(request.InnoUserId, cancellationToken);
     }
 }

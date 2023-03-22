@@ -2,10 +2,13 @@
 using Innogotchi.Application;
 using Innogotchi.Application.Common.Mappings;
 using Innogotchi.Application.Interfaces;
+using Innogotchi.Domain;
 using Innogotchi.Persistence;
 using Innogotchi.WebApi.Infrastructure;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using saja.Extensions;
+using saja.Interfaces;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace Innogotchi.WebApi.Extensions;
@@ -37,7 +40,7 @@ public static class ServiceMiddlewareExtension
                     ValidateIssuerSigningKey = true,
                     ValidateAudience = false,
                     ValidateIssuer = false,
-                    IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey()
+                    IssuerSigningKey = InnogotchiAuthOptions.GetSymmetricSecurityKeyStatic()
                 };
             });
 
@@ -50,7 +53,7 @@ public static class ServiceMiddlewareExtension
         builder.Services
             .AddApplication()
             .AddPersistence(builder.Configuration);
-        
+
         builder.Services.AddCors(options =>
             options.AddPolicy("AllowAll", policy =>
             {

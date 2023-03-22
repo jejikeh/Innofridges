@@ -3,6 +3,7 @@ using Innogotchi.Application.Common.Exceptions;
 using Innogotchi.Application.Interfaces;
 using Innogotchi.Domain;
 using MediatR;
+using saja.Interfaces;
 
 namespace Innogotchi.Application.Queries.InnoUserQueries.GetInnoUserDetails;
 
@@ -19,7 +20,7 @@ public class GetInnoUserDetailsByIdQueryHandler : IRequestHandler<GetInnoUserDet
 
     public async Task<InnoUserDetailsViewModel> Handle(GetInnoUserDetailsByIdQuery request, CancellationToken cancellationToken)
     {
-        var user = await _innoUserRepository.GetInnoUserById(request.InnoUserId, cancellationToken);
+        var user = await _innoUserRepository.GetModelUserById(request.InnoUserId, cancellationToken);
         if(user is null)
             throw new NotFoundException<InnoUser>(request.InnoUserId);
 

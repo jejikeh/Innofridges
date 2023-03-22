@@ -1,9 +1,9 @@
 ﻿using Innogotchi.Domain;
 using MediatR;
+using saja.Queries;
 
 namespace Innogotchi.Application.Queries.InnoUserQueries.GetInnoUserDetails;
 
-public class GetInnoUserByUsernameQuery : IRequest<InnoUser>
+public class GetInnoUserByUsernameQuery : GetModelByUsernameQuery<InnoUser>
 {
-    public string Username { get; set; }
 }

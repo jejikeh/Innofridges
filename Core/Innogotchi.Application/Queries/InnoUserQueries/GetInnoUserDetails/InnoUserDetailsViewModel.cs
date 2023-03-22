@@ -15,7 +15,7 @@ public class InnoUserDetailsViewModel : IMapWith<InnoUser>
         profile.CreateMap<InnoUser, InnoUserDetailsViewModel>()
             .ForMember(
                 model => model.InnoUserId, 
-                member => member.MapFrom(user => user.InnoUserId))
+                member => member.MapFrom(user => user.UserId))
             .ForMember(
                 model => model.Email, 
                 member => member.MapFrom(user => user.Email))

@@ -16,6 +16,7 @@ public static class DependencyInjection
                 options.UseSqlite(configuration.GetConnectionString("InnogotchiDbConnection")));
 
         serviceCollection.AddScoped<IInnoUserRepository, InnoUserRepository>();
+        serviceCollection.AddScoped<IProductRepository, ProductRepository>();
         return serviceCollection;
     }
 }

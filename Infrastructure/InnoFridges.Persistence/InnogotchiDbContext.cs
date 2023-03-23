@@ -8,6 +8,7 @@ namespace InnoFridges.Persistence;
 public class InnogotchiDbContext : DbContext, IUserModelDbContext<InnoUser>
 {
     public DbSet<InnoUser> Users { get; set; }
+    public DbSet<Product> Products { get; set; }
 
     public InnogotchiDbContext(DbContextOptions options) : base(options)
     {

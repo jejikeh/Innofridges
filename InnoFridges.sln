@@ -1,18 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innogotchi.Domain", "Core\Innogotchi.Domain\Innogotchi.Domain.csproj", "{41F0273C-BA55-4A3F-9583-C6FFA5E7F1F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoFridges.Domain", "Core\InnoFridges.Domain\InnoFridges.Domain.csproj", "{41F0273C-BA55-4A3F-9583-C6FFA5E7F1F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1A134D57-C36D-43C4-8CD6-EDEA8959C5B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innogotchi.Application", "Core\Innogotchi.Application\Innogotchi.Application.csproj", "{542C28CC-E564-4AD5-8F58-5899F76D936A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoFridges.Application", "Core\InnoFridges.Application\InnoFridges.Application.csproj", "{542C28CC-E564-4AD5-8F58-5899F76D936A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{4B32CD48-8A26-464A-92B1-D2DD2393DE42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innogotchi.Persistence", "Infrastructure\Innogotchi.Persistence\Innogotchi.Persistence.csproj", "{EFFC0249-DE1C-4025-922A-EEB54F3C94B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoFridges.Persistence", "Infrastructure\InnoFridges.Persistence\InnoFridges.Persistence.csproj", "{EFFC0249-DE1C-4025-922A-EEB54F3C94B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{AEE9EF99-DE56-4339-933F-A5CE20A4E0AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innogotchi.WebApi", "Presentation\Innogotchi.WebApi\Innogotchi.WebApi.csproj", "{2207BE98-9057-47FD-A297-6D83B990163E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoFridges.WebApi", "Presentation\InnoFridges.WebApi\InnoFridges.WebApi.csproj", "{2207BE98-9057-47FD-A297-6D83B990163E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "saja", "..\..\saja\saja\saja.csproj", "{2F6D19A5-F522-42D0-91BB-8D891E71BEA0}"
 EndProject

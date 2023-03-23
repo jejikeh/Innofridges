@@ -1,14 +1,11 @@
 ﻿using System.Reflection;
+using InnoFridges.Application;
+using InnoFridges.Application.Common.Mappings;
+using InnoFridges.Application.Interfaces;
+using InnoFridges.Persistence;
 using InnoFridges.WebApi.Infrastructure;
-using Innogotchi.Application;
-using Innogotchi.Application.Common.Mappings;
-using Innogotchi.Application.Interfaces;
-using Innogotchi.Domain;
-using Innogotchi.Persistence;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using saja.Extensions;
-using saja.Interfaces;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace InnoFridges.WebApi.Extensions;
@@ -48,6 +45,7 @@ public static class ServiceMiddlewareExtension
         {
             config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
             config.AddProfile(new AssemblyMappingProfile(typeof(IInnoUserRepository).Assembly));
+            config.AddProfile(new AssemblyMappingProfile(typeof(IProductRepository).Assembly));
         });
 
         builder.Services

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Innogotchi.Application.Common.Mappings;
-using Innogotchi.Domain;
+using InnoFridges.Application.Common.Mappings;
+using InnoFridges.Domain;
 using saja.Commands.UpdateUserModel;
 
-namespace Innogotchi.Application.Commands.InnoUserCommands.UpdateInnoUser;
+namespace InnoFridges.Application.Commands.InnoUserCommands.UpdateInnoUser;
 
 public class UpdateInnoUserCommand : UpdateUserModelCommand, IMapWith<InnoUser>
 {

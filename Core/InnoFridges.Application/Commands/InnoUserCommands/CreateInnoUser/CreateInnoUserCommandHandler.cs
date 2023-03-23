@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
-using Innogotchi.Application.Interfaces;
-using Innogotchi.Domain;
+using InnoFridges.Application.Interfaces;
+using InnoFridges.Domain;
 using saja.Commands.CreateUserModel;
-using saja.Interfaces;
 
-namespace Innogotchi.Application.Commands.InnoUserCommands.CreateInnoUser;
+namespace InnoFridges.Application.Commands.InnoUserCommands.CreateInnoUser;
 
 public class CreateInnoUserCommandHandler : CreateUserModelCommandHandler<CreateInnoUserCommand, InnoUser, IInnoUserRepository>
 {

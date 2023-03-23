@@ -1,6 +1,8 @@
-﻿namespace InnoFridges.Application.Commands.ProductCommands.DeletProduct;
+﻿using MediatR;
 
-public class DeleteProductCommand
+namespace InnoFridges.Application.Commands.ProductCommands.DeleteProduct;
+
+public class DeleteProductCommand : IRequest
 {
-    
+    public Guid ProductId { get; set; }
 }

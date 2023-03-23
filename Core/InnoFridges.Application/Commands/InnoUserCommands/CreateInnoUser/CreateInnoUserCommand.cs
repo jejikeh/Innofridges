@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AutoMapper;
-using Innogotchi.Application.Common.Mappings;
-using Innogotchi.Domain;
+using InnoFridges.Application.Common.Mappings;
+using InnoFridges.Domain;
 using saja.Commands.CreateUserModel;
 
-namespace Innogotchi.Application.Commands.InnoUserCommands.CreateInnoUser;
+namespace InnoFridges.Application.Commands.InnoUserCommands.CreateInnoUser;
 
 public class CreateInnoUserCommand : CreateUserModelCommand<InnoUser>, IMapWith<InnoUser>
 {

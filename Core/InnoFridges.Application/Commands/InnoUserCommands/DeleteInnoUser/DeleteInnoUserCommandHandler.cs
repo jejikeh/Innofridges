@@ -1,9 +1,8 @@
-﻿using Innogotchi.Application.Interfaces;
-using Innogotchi.Domain;
+﻿using InnoFridges.Application.Interfaces;
+using InnoFridges.Domain;
 using saja.Commands.DeleteUserModel;
-using saja.Interfaces;
 
-namespace Innogotchi.Application.Commands.InnoUserCommands.DeleteInnoUser;
+namespace InnoFridges.Application.Commands.InnoUserCommands.DeleteInnoUser;
 
 public class DeleteInnoUserCommandHandler : DeleteUserModelCommandHandler<InnoUser, IInnoUserRepository>
 {

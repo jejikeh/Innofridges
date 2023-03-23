@@ -1,7 +1,7 @@
-﻿using Innogotchi.Domain;
+﻿using InnoFridges.Domain;
 using saja.Interfaces;
 
-namespace Innogotchi.Application.Interfaces;
+namespace InnoFridges.Application.Interfaces;
 
 public interface IInnoUserRepository : IUserModelRepository<InnoUser>
 {

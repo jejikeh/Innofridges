@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Innogotchi.Application;
+namespace InnoFridges.Application;
 
 public static class DependencyInjection
 {

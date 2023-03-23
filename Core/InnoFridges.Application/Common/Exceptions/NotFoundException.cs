@@ -1,4 +1,4 @@
-﻿namespace Innogotchi.Application.Common.Exceptions;
+﻿namespace InnoFridges.Application.Common.Exceptions;
 
 public class NotFoundException<T> : Exception
 {

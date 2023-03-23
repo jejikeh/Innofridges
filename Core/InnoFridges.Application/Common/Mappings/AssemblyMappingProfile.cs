@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using AutoMapper;
 
-namespace Innogotchi.Application.Common.Mappings;
+namespace InnoFridges.Application.Common.Mappings;
 
 public class AssemblyMappingProfile : Profile
 {

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Innogotchi.Application.Common.Mappings;
+namespace InnoFridges.Application.Common.Mappings;
 
 public interface IMapWith<T>
 {

@@ -1,8 +1,7 @@
-﻿using Innogotchi.Domain;
-using MediatR;
+﻿using InnoFridges.Domain;
 using saja.Queries;
 
-namespace Innogotchi.Application.Queries.InnoUserQueries.GetInnoUserDetails;
+namespace InnoFridges.Application.Queries.InnoUserQueries.GetInnoUserDetails;
 
 public class GetInnoUserByUsernameQuery : GetModelByUsernameQuery<InnoUser>
 {

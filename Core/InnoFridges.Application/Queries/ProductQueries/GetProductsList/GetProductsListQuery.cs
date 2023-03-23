@@ -1,6 +1,8 @@
-﻿namespace InnoFridges.Application.Queries.ProductQueries.GetProductsList;
+﻿using MediatR;
 
-public class GetProductsListQuery
+namespace InnoFridges.Application.Queries.ProductQueries.GetProductsList;
+
+public class GetProductsListQuery : IRequest<ProductsListViewModel>
 {
     
 }

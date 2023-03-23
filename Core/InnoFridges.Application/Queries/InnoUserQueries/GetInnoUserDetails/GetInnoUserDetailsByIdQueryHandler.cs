@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using Innogotchi.Application.Common.Exceptions;
-using Innogotchi.Application.Interfaces;
-using Innogotchi.Domain;
+using InnoFridges.Application.Common.Exceptions;
+using InnoFridges.Application.Interfaces;
+using InnoFridges.Domain;
 using MediatR;
-using saja.Interfaces;
 
-namespace Innogotchi.Application.Queries.InnoUserQueries.GetInnoUserDetails;
+namespace InnoFridges.Application.Queries.InnoUserQueries.GetInnoUserDetails;
 
 public class GetInnoUserDetailsByIdQueryHandler : IRequestHandler<GetInnoUserDetailsByIdQuery, InnoUserDetailsViewModel>
 {

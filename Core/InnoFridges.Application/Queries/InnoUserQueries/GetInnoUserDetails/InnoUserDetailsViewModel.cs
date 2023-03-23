@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Innogotchi.Application.Common.Mappings;
-using Innogotchi.Domain;
+using InnoFridges.Application.Common.Mappings;
+using InnoFridges.Domain;
 
-namespace Innogotchi.Application.Queries.InnoUserQueries.GetInnoUserDetails;
+namespace InnoFridges.Application.Queries.InnoUserQueries.GetInnoUserDetails;
 
 public class InnoUserDetailsViewModel : IMapWith<InnoUser>
 {

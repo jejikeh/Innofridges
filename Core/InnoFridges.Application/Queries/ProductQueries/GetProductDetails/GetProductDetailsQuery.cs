@@ -1,6 +1,8 @@
-﻿namespace InnoFridges.Application.Queries.ProductQueries.GetProductDetails;
+﻿using MediatR;
 
-public class GetProductDetailsQuery
+namespace InnoFridges.Application.Queries.ProductQueries.GetProductDetails;
+
+public class GetProductDetailsQuery : IRequest<ProductDetailsViewModel>
 {
-    
+    public Guid ProductId { get; set; }
 }

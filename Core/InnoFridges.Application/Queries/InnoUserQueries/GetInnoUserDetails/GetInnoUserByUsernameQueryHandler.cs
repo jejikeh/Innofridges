@@ -1,8 +1,8 @@
-﻿using Innogotchi.Application.Interfaces;
-using Innogotchi.Domain;
+﻿using InnoFridges.Application.Interfaces;
+using InnoFridges.Domain;
 using saja.Queries;
 
-namespace Innogotchi.Application.Queries.InnoUserQueries.GetInnoUserDetails;
+namespace InnoFridges.Application.Queries.InnoUserQueries.GetInnoUserDetails;
 
 public class GetInnoUserByUsernameQueryHandler : GetModelByUsernameQueryHandler<GetInnoUserByUsernameQuery, InnoUser, IInnoUserRepository>
 {

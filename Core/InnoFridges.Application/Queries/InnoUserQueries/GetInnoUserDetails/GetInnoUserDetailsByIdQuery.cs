@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Innogotchi.Application.Queries.InnoUserQueries.GetInnoUserDetails;
+namespace InnoFridges.Application.Queries.InnoUserQueries.GetInnoUserDetails;
 
 public class GetInnoUserDetailsByIdQuery : IRequest<InnoUserDetailsViewModel>
 {

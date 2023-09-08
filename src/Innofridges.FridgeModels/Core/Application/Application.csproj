@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\Domain\Domain\Domain.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Folder Include="Requests\Manufactures\Commands\CreateManufacture\" />
+      <Folder Include="Requests\Manufactures\Commands\DeleteManufacture\" />
+      <Folder Include="Requests\Manufactures\Commands\UpdateManufacture\" />
+      <Folder Include="Requests\Manufactures\Queries\GetManufactures\" />
+      <Folder Include="Requests\Manufactures\Queries\GetManufacture\" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.1.1" />
+    </ItemGroup>
+
+</Project>

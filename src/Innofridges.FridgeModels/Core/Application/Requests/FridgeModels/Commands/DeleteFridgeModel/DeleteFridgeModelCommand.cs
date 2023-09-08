@@ -1,6 +1,5 @@
+using MediatR;
+
 namespace Application.Requests.FridgeModels.Commands.DeleteFridgeModel;
 
-public class DeleteFridgeModelCommand
-{
-    
-}
+public record DeleteFridgeModelCommand(Guid Id) : IRequest;

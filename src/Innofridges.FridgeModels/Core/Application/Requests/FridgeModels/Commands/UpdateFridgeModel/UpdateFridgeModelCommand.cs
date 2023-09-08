@@ -1,6 +1,11 @@
+using Domain;
+using MediatR;
+
 namespace Application.Requests.FridgeModels.Commands.UpdateFridgeModel;
 
-public class UpdateFridgeModelCommand
-{
-    
-}
+public record UpdateFridgeModelCommand(
+    Guid Id,
+    string? Name,
+    DateOnly? ManufactureDate,
+    Guid? ManufactureId)
+    : IRequest<FridgeModel>;

@@ -18,6 +18,6 @@ public interface IManufactureRepository
         CancellationToken cancellationToken);
     
     public Manufacture UpdateManufacture(Manufacture manufacture);
-    public void DeleteManufacture(Guid id);
+    public void DeleteManufacture(Manufacture manufacture);
     public Task SaveChangesAsync(CancellationToken cancellationToken);
 }

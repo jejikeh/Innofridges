@@ -18,6 +18,6 @@ public interface IFridgeModelsRepository
         CancellationToken cancellationToken);
     
     public void UpdateFridgeModel(FridgeModel fridgeModel);
-    public void DeleteFridgeModel(Guid id);
+    public void DeleteFridgeModel(FridgeModel fridgeModel);
     public Task SaveChangesAsync(CancellationToken cancellationToken);
 }

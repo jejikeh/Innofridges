@@ -26,7 +26,7 @@ public class DeleteFridgeModelCommandHandler : IRequestHandler<DeleteFridgeModel
             throw new HttpNotFoundException($"FridgeModel with ID = {request.Id} was not found");
         }
 
-        _fridgeModelsRepository.DeleteFridgeModel(request.Id);
+        _fridgeModelsRepository.DeleteFridgeModel(fridge);
         await _fridgeModelsRepository.SaveChangesAsync(cancellationToken);
     }
 }

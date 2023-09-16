@@ -2,6 +2,7 @@ using Application;
 using Application.Abstractions;
 using Infrastructure;
 using Infrastructure.Persistence;
+using Microsoft.OpenApi.Models;
 
 namespace Presentation.Configuration;
 
@@ -15,6 +16,7 @@ public static class ApplicationServicesConfiguration
 
         builder.Services
             .AddSingleton((ICommonApplicationConfiguration)applicationConfiguration)
+            .AddSwagger()
             .InjectApplication()
             .InjectInfrastructure(configuration)
             .AddControllers();
@@ -50,7 +52,22 @@ public static class ApplicationServicesConfiguration
         app.UseHttpsRedirection();
         app.UseSwagger();
         app.UseSwaggerUI();
-        
+
         return app;
+    }
+    
+    private static IServiceCollection AddSwagger(this IServiceCollection serviceCollection)
+    {
+        serviceCollection.AddSwaggerGen(options =>
+        {
+            options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme()
+            {
+                In = ParameterLocation.Header,
+                Name = "Authorization",
+                Type = SecuritySchemeType.ApiKey
+            });
+        });
+
+        return serviceCollection;
     }
 }

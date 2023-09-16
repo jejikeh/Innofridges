@@ -13,17 +13,18 @@
 
 
     <ItemGroup>
-      <Folder Include="Requests\Manufactures\Commands\CreateManufacture\" />
-      <Folder Include="Requests\Manufactures\Commands\DeleteManufacture\" />
-      <Folder Include="Requests\Manufactures\Commands\UpdateManufacture\" />
-      <Folder Include="Requests\Manufactures\Queries\GetManufactures\" />
-      <Folder Include="Requests\Manufactures\Queries\GetManufacture\" />
-    </ItemGroup>
-
-
-    <ItemGroup>
       <PackageReference Include="MediatR" Version="12.1.1" />
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
     </ItemGroup>
+
+
+
+
+
+
+
+
+
+
 
 </Project>

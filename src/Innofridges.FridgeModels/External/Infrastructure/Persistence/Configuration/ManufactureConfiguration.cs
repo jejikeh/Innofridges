@@ -11,5 +11,7 @@ public class ManufactureConfiguration : IEntityTypeConfiguration<Manufacture>
         builder
             .HasMany(manufacture => manufacture.FridgeModels)
             .WithOne(fridgeModel => fridgeModel.Manufacture);
+
+        builder.HasKey(manufacture => manufacture.Id);
     }
 }

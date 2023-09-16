@@ -15,11 +15,11 @@ public class ManufactureRepository : IManufactureRepository
 
     public async Task<List<Manufacture>> GetManufacturesAsync(int skipCount, int takeCount, CancellationToken cancellationToken)
     {
-        return _innofridgesDbContext.Manufactures
+        return await _innofridgesDbContext.Manufactures
             .AsQueryable()
             .Skip(skipCount)
             .Take(takeCount)
-            .ToList();
+            .ToListAsync(cancellationToken);
     }
 
     public async Task<Manufacture?> GetManufactureAsync(Guid id, CancellationToken cancellationToken)
@@ -27,6 +27,18 @@ public class ManufactureRepository : IManufactureRepository
         return await _innofridgesDbContext
             .Manufactures
             .FirstOrDefaultAsync(manufacture => manufacture.Id == id, cancellationToken);
+    }
+    public async Task<List<FridgeModel>> GetManufactureModelsAsync(Guid id, int skipCount, int takeCount, CancellationToken cancellationToken)
+    {
+        return await _innofridgesDbContext
+            .Manufactures
+            .AsQueryable()
+            .Where(manufacture => manufacture.Id == id)
+            .Include(manufacture => manufacture.FridgeModels)
+            .SelectMany(manufacture => manufacture.FridgeModels)
+            .Skip(skipCount)
+            .Take(takeCount)
+            .ToListAsync(cancellationToken);
     }
 
     public async Task<Manufacture> CreateManufactureAsync(Manufacture manufacture, CancellationToken cancellationToken)

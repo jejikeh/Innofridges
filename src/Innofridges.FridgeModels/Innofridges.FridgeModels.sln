@@ -12,6 +12,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "External\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "External\Presentation\Presentation.csproj", "{DE641397-173F-4B78-8D7B-BBFBA4D01F4F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{D03FD61B-D7DD-42D8-B253-EE6CE75E9170}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\identity-db-service.yaml = Deploy\identity-db-service.yaml
+		Deploy\identity-db-deployment.yaml = Deploy\identity-db-deployment.yaml
+		Deploy\identity-volume-claim.yaml = Deploy\identity-volume-claim.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

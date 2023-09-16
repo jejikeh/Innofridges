@@ -20,4 +20,10 @@ public interface IManufactureRepository
     public Manufacture UpdateManufacture(Manufacture manufacture);
     public void DeleteManufacture(Manufacture manufacture);
     public Task SaveChangesAsync(CancellationToken cancellationToken);
+    
+    public Task<List<FridgeModel>> GetManufactureModelsAsync(
+        Guid id, 
+        int skipCount, 
+        int takeCount,
+        CancellationToken cancellationToken);
 }

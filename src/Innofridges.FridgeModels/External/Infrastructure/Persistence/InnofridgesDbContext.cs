@@ -6,8 +6,8 @@ namespace Infrastructure.Persistence;
 
 public class InnofridgesDbContext : DbContext
 {
-    public DbSet<FridgeModel> FridgeModels { get; }
-    public DbSet<Manufacture> Manufactures { get; }
+    public DbSet<FridgeModel> FridgeModels { get; set; }
+    public DbSet<Manufacture> Manufactures { get; set; }
 
     public InnofridgesDbContext(DbContextOptions<InnofridgesDbContext> options) : base(options)
     {

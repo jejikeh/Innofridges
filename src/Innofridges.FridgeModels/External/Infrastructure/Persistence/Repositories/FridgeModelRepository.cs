@@ -18,6 +18,7 @@ public class FridgeModelRepository : IFridgeModelsRepository
         return await _innofridgesDbContext.FridgeModels
             .AsQueryable()
             .OrderBy(data => data.Name)
+            .Include(data => data.Manufacture)
             .Skip(skipCount)
             .Take(takeCount)
             .ToListAsync(cancellationToken);

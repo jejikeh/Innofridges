@@ -37,9 +37,9 @@ public class FridgeModelRepository : IFridgeModelsRepository
         return fridgeModel;
     }
 
-    public void UpdateFridgeModel(FridgeModel fridgeModel)
+    public FridgeModel UpdateFridgeModel(FridgeModel fridgeModel)
     {
-        _innofridgesDbContext.FridgeModels.Update(fridgeModel);
+        return _innofridgesDbContext.FridgeModels.Update(fridgeModel).Entity;
     }
 
     public void DeleteFridgeModel(FridgeModel fridgeModel)

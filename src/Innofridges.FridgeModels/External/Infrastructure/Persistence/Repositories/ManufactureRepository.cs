@@ -28,6 +28,7 @@ public class ManufactureRepository : IManufactureRepository
             .Manufactures
             .FirstOrDefaultAsync(manufacture => manufacture.Id == id, cancellationToken);
     }
+    
     public async Task<List<FridgeModel>> GetManufactureModelsAsync(Guid id, int skipCount, int takeCount, CancellationToken cancellationToken)
     {
         return await _innofridgesDbContext
@@ -43,8 +44,8 @@ public class ManufactureRepository : IManufactureRepository
 
     public async Task<Manufacture> CreateManufactureAsync(Manufacture manufacture, CancellationToken cancellationToken)
     {
-        await _innofridgesDbContext.Manufactures.AddAsync(manufacture, cancellationToken);
-        return manufacture;
+        var entry = await _innofridgesDbContext.Manufactures.AddAsync(manufacture, cancellationToken);
+        return entry.Entity;
     }
 
     public Manufacture UpdateManufacture(Manufacture manufacture)

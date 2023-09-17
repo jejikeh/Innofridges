@@ -6,22 +6,22 @@ namespace Application.Requests.FridgeProducts.Commands.DeleteFridgeProduct;
 
 public class DeleteFridgeProductCommandHandler : IRequestHandler<DeleteFridgeProductCommand>
 {
-    private readonly IFridgeProductsRepository _fridgeProductsRepository;
+    private readonly IFridgeProductRepository _fridgeProductRepository;
 
-    public DeleteFridgeProductCommandHandler(IFridgeProductsRepository fridgeProductsRepository)
+    public DeleteFridgeProductCommandHandler(IFridgeProductRepository fridgeProductRepository)
     {
-        _fridgeProductsRepository = fridgeProductsRepository;
+        _fridgeProductRepository = fridgeProductRepository;
     }
 
     public async Task Handle(DeleteFridgeProductCommand request, CancellationToken cancellationToken)
     {
-        var fridgeProduct = await _fridgeProductsRepository.GetFridgeProductAsync(request.Id, cancellationToken);
+        var fridgeProduct = await _fridgeProductRepository.GetFridgeProductAsync(request.Id, cancellationToken);
         if (fridgeProduct is null)
         {
             throw new HttpNotFoundException($"FridgeProduct with id {request.Id} not found.");
         }
         
-        _fridgeProductsRepository.DeleteFridgeProduct(fridgeProduct);
-        await _fridgeProductsRepository.SaveChangesAsync(cancellationToken);
+        _fridgeProductRepository.DeleteFridgeProduct(fridgeProduct);
+        await _fridgeProductRepository.SaveChangesAsync(cancellationToken);
     }
 }

@@ -8,6 +8,9 @@ public class InnofridgesDbContext : DbContext
 {
     public DbSet<FridgeModel> FridgeModels { get; set; }
     public DbSet<Manufacture> Manufactures { get; set; }
+    public DbSet<Fridge> Fridges { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<FridgeProduct> FridgeProducts { get; set; }
 
     public InnofridgesDbContext(DbContextOptions<InnofridgesDbContext> options) : base(options)
     {

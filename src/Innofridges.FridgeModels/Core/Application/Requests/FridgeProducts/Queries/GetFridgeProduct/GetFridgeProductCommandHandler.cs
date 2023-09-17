@@ -7,16 +7,16 @@ namespace Application.Requests.FridgeProducts.Queries.GetFridgeProduct;
 
 public class GetFridgeProductCommandHandler : IRequestHandler<GetFridgeProductCommand, FridgeProduct>
 {
-    private readonly IFridgeProductsRepository _fridgeProductsRepository;
+    private readonly IFridgeProductRepository _fridgeProductRepository;
 
-    public GetFridgeProductCommandHandler(IFridgeProductsRepository fridgeProductsRepository)
+    public GetFridgeProductCommandHandler(IFridgeProductRepository fridgeProductRepository)
     {
-        _fridgeProductsRepository = fridgeProductsRepository;
+        _fridgeProductRepository = fridgeProductRepository;
     }
 
     public async Task<FridgeProduct> Handle(GetFridgeProductCommand request, CancellationToken cancellationToken)
     {
-        var fridgeModule = await _fridgeProductsRepository.GetFridgeProductAsync(request.Id,cancellationToken);
+        var fridgeModule = await _fridgeProductRepository.GetFridgeProductAsync(request.Id,cancellationToken);
         if (fridgeModule is null)
         {
             throw new HttpNotFoundException($"FridgeProduct with id {request.Id} not found.");

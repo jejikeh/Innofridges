@@ -45,9 +45,9 @@ public class UpdateFridgeModelCommandHandler :
         fridge.Name = request.Name ?? fridge.Name;
         fridge.ManufactureDate = request.ManufactureDate ?? fridge.ManufactureDate;
         
-        _fridgeModelsRepository.UpdateFridgeModel(fridge);
+        var updateFridgeModel = _fridgeModelsRepository.UpdateFridgeModel(fridge);
         await _fridgeModelsRepository.SaveChangesAsync(cancellationToken);
         
-        return fridge;
+        return updateFridgeModel;
     }
 }

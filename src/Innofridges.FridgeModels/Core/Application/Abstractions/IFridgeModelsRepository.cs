@@ -17,7 +17,7 @@ public interface IFridgeModelsRepository
         FridgeModel fridgeModel, 
         CancellationToken cancellationToken);
     
-    public void UpdateFridgeModel(FridgeModel fridgeModel);
+    public FridgeModel UpdateFridgeModel(FridgeModel fridgeModel);
     public void DeleteFridgeModel(FridgeModel fridgeModel);
     public Task SaveChangesAsync(CancellationToken cancellationToken);
 }

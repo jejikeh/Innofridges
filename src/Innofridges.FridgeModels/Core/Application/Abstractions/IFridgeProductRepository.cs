@@ -2,7 +2,7 @@ using Domain;
 
 namespace Application.Abstractions;
 
-public interface IFridgeProductsRepository
+public interface IFridgeProductRepository
 {
     public Task<List<FridgeProduct>> GetFridgeProductsAsync(
         int skipCount, 
@@ -17,7 +17,7 @@ public interface IFridgeProductsRepository
         FridgeProduct fridgeProduct,
         CancellationToken cancellationToken);
     
-    public void UpdateFridgeProduct(FridgeProduct fridgeProduct);
+    public FridgeProduct UpdateFridgeProduct(FridgeProduct fridgeProduct);
     public void DeleteFridgeProduct(FridgeProduct fridgeProduct);
     public Task SaveChangesAsync(CancellationToken cancellationToken);
 }

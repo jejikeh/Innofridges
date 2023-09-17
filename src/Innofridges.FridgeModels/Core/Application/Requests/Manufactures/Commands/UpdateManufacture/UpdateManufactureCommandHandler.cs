@@ -23,9 +23,10 @@ public class UpdateManufactureCommandHandler : IRequestHandler<UpdateManufacture
         }
         
         manufacture.Name = request.Name ?? manufacture.Name;
-        _manufactureRepository.UpdateManufacture(manufacture);
+        
+        var updateManufacture = _manufactureRepository.UpdateManufacture(manufacture);
         await _manufactureRepository.SaveChangesAsync(cancellationToken);
 
-        return manufacture;
+        return updateManufacture;
     }
 }

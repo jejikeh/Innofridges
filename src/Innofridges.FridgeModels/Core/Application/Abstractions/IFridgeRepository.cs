@@ -17,7 +17,7 @@ public interface IFridgeRepository
         Fridge fridge, 
         CancellationToken cancellationToken);
     
-    public void UpdateFridge(Fridge fridge);
+    public Fridge UpdateFridge(Fridge fridge);
     public void DeleteFridge(Fridge fridge);
     public Task SaveChangesAsync(CancellationToken cancellationToken);
 }

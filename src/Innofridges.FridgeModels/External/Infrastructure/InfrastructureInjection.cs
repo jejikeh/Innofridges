@@ -21,6 +21,10 @@ public static class InfrastructureInjection
 
         serviceCollection.AddScoped<IFridgeModelsRepository, FridgeModelRepository>();
         serviceCollection.AddScoped<IManufactureRepository, ManufactureRepository>();
+        serviceCollection.AddScoped<IProductRepository, ProductRepository>();
+        serviceCollection.AddScoped<IFridgeRepository, FridgeRepository>();
+        serviceCollection.AddScoped<IFridgeProductRepository, FridgeProductRepository>();
+        
         
         return serviceCollection;
     }

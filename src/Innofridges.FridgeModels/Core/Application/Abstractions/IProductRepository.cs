@@ -17,7 +17,7 @@ public interface IProductRepository
         Product product, 
         CancellationToken cancellationToken);
     
-    public void UpdateProduct(Product product);
+    public Product UpdateProduct(Product product);
     public void DeleteProduct(Product product);
     public Task SaveChangesAsync(CancellationToken cancellationToken);
 }

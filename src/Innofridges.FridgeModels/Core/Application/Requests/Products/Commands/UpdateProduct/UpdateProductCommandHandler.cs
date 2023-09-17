@@ -25,9 +25,9 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand,
         product.Name = request.Name ?? product.Name;
         product.DefaultQuantity = request.DefaultQuantity ?? product.DefaultQuantity;
         
-        _productRepository.UpdateProduct(product);
+        var updateProduct = _productRepository.UpdateProduct(product);
         await _productRepository.SaveChangesAsync(cancellationToken);
 
-        return product;
+        return updateProduct;
     }
 }

@@ -40,9 +40,9 @@ public class UpdateFridgeCommandHandler : IRequestHandler<UpdateFridgeCommand, F
         fridge.ModelId = request.ModelId ?? fridge.ModelId;
         fridge.OwnerName = request.OwnerName ?? fridge.OwnerName;
         
-        _fridgeRepository.UpdateFridge(fridge);
+        var updateFridge = _fridgeRepository.UpdateFridge(fridge);
         await _fridgeRepository.SaveChangesAsync(cancellationToken);
 
-        return fridge;
+        return updateFridge;
     }
 }

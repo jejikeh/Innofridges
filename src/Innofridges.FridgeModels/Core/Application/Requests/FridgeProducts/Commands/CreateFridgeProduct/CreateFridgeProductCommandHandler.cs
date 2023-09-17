@@ -7,16 +7,16 @@ namespace Application.Requests.FridgeProducts.Commands.CreateFridgeProduct;
 
 public class CreateFridgeProductCommandHandler : IRequestHandler<CreateFridgeProductCommand, FridgeProduct>
 {
-    private readonly IFridgeProductsRepository _fridgeProductsRepository;
+    private readonly IFridgeProductRepository _fridgeProductRepository;
     private readonly IFridgeRepository _fridgeRepository;
     private readonly IProductRepository _productRepository;
 
     public CreateFridgeProductCommandHandler(
-        IFridgeProductsRepository fridgeProductsRepository, 
+        IFridgeProductRepository fridgeProductRepository, 
         IFridgeRepository fridgeRepository, 
         IProductRepository productRepository)
     {
-        _fridgeProductsRepository = fridgeProductsRepository;
+        _fridgeProductRepository = fridgeProductRepository;
         _fridgeRepository = fridgeRepository;
         _productRepository = productRepository;
     }
@@ -43,8 +43,8 @@ public class CreateFridgeProductCommandHandler : IRequestHandler<CreateFridgePro
             Quantity = request.Quantity
         };
         
-        var fridgeProductCreated = await _fridgeProductsRepository.CreateFridgeProductAsync(fridgeProduct, cancellationToken);
-        await _fridgeProductsRepository.SaveChangesAsync(cancellationToken);
+        var fridgeProductCreated = await _fridgeProductRepository.CreateFridgeProductAsync(fridgeProduct, cancellationToken);
+        await _fridgeProductRepository.SaveChangesAsync(cancellationToken);
         
         return fridgeProductCreated;
     }

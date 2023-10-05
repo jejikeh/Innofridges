@@ -1,10 +1,8 @@
 using Application;
 using Application.Abstractions;
 using Infrastructure;
+using Infrastructure.Common;
 using Infrastructure.Persistence;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.OpenApi.Models;
 
 namespace Presentation.Configuration;
 
@@ -14,13 +12,13 @@ public static class ApplicationServicesConfiguration
         this WebApplicationBuilder builder,
         IConfiguration configuration)
     {
-        var applicationConfiguration = new CommonApplicationConfiguration();
+        var applicationConfiguration = new CommonApplicationConfiguration(configuration);
 
         builder.Services
             .AddSingleton((ICommonApplicationConfiguration)applicationConfiguration)
             .AddSwaggerGen()
             .InjectApplication()
-            .InjectInfrastructure(configuration)
+            .InjectInfrastructure(applicationConfiguration)
             .AddControllers();
 
         builder.Services.AddAuthentication();

@@ -1,5 +1,6 @@
 using System.Reflection;
 using Application.Abstractions;
+using Infrastructure.Common;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +13,18 @@ public static class InfrastructureInjection
 {
     public static IServiceCollection InjectInfrastructure(
         this IServiceCollection serviceCollection,
-        IConfiguration configuration)
+        ICommonInfrastructureConfiguration configuration)
     {
-        if (configuration["Db:ConnectionString"] is not null)
+        switch (configuration.DatabaseConfig.DatabaseProvider)
         {
-            serviceCollection.AddDbContext<InnofridgesDbContext>(configuration["Db:ConnectionString"]);
+            case DatabaseProvider.PostgreSQL:
+                serviceCollection.InjectNpgsql(configuration.DatabaseConfig.ConnectionString);
+                break;
+            case DatabaseProvider.SQLite:
+                serviceCollection.InjectSqlite(configuration.DatabaseConfig.ConnectionString);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
 
         serviceCollection.AddScoped<IFridgeModelsRepository, FridgeModelRepository>();
@@ -25,15 +33,12 @@ public static class InfrastructureInjection
         serviceCollection.AddScoped<IFridgeRepository, FridgeRepository>();
         serviceCollection.AddScoped<IFridgeProductRepository, FridgeProductRepository>();
         
-        
         return serviceCollection;
     }
 
-    private static IServiceCollection AddDbContext<TDbContext>(
-        this IServiceCollection serviceCollection,
-        string? connectionString) where TDbContext : DbContext
+    private static IServiceCollection InjectNpgsql(this IServiceCollection serviceCollection, string connectionString)
     {
-        serviceCollection.AddDbContext<TDbContext>(options =>
+        serviceCollection.AddDbContext<InnofridgesDbContext>(options =>
         {
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             options.UseNpgsql(
@@ -46,5 +51,18 @@ public static class InfrastructureInjection
         });
 
         return serviceCollection;
+    }
+    
+    private static IServiceCollection InjectSqlite(
+        this IServiceCollection serviceCollection, 
+        string? connectionString)
+    {
+        return serviceCollection.AddDbContext<InnofridgesDbContext>(options =>
+        {
+            options.EnableDetailedErrors();
+            options.UseSqlite(
+                connectionString,
+                builder => builder.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName));
+        });
     }
 }
